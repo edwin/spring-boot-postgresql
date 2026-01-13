@@ -7,6 +7,9 @@ RUN chown 1001 /work \
     && chown 1001:root /work
 
 COPY target/spring-boot-postgresql /work/application
+COPY target/*.so /work/
+
+ENV LD_LIBRARY_PATH=/work
 
 EXPOSE 8080
 
